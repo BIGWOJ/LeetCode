@@ -25,10 +25,12 @@
 class Solution:
     # 1st solution, brute force approach
     def twoSum(self, nums, target):
+        #Brute force approach - adding current number to indexes
         for index_i, i in enumerate(nums):
             indexes = []
             indexes.append(index_i)
             current_sum = i
+            #Iterating through rest part of the list
             for index_j, j in enumerate(nums):
                 current_sum += j
                 if index_j == index_i:
@@ -43,6 +45,7 @@ class Solution:
     def twoSum_2(self, nums, target):
         numbers_hash_map = {}
         for index, number in enumerate(nums):
+            #Calculating difference between target and current number and checking if it is in hash map
             difference = target - number
             if difference in numbers_hash_map:
                 return [numbers_hash_map[difference], index]

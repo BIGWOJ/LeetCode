@@ -33,7 +33,9 @@
 var twoSum = function(nums, target) {
     let numbers_hash_map = {};
     for (let i = 0; i < nums.length; i++){
+        //Calculating difference between target and current number and checking if it is in hash map
         let difference = target - nums[i];
+        //If difference is in hash map => return indexes
         if (numbers_hash_map.hasOwnProperty(difference)){
             return [numbers_hash_map[difference], i]
         }

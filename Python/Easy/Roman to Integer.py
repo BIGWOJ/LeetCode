@@ -48,6 +48,8 @@ class Solution(object):
     def romanToInt(self, s):
         roman_numbers = {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
         sum = 0
+        #Replacing numbers created by substraction into numbers created by adding,
+        #so we can iterate through string and adding
         s = (s.replace('IV', 'IIII')
              .replace('IX', 'VIIII')
              .replace('XL', 'XXXX')

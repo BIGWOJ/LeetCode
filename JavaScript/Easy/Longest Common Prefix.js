@@ -22,12 +22,14 @@ var longestCommonPrefix = function(strs) {
         return ""
     }
 
+    //Finding the shortest word in the list because the longest prefix maximally can be the shortest word of the list
     let shortest_word = strs.reduce((a, b) =>{
         return a.length <= b.length ? a : b;
     })
 
     let longest_prefix = shortest_word;
     for (let i = 0; i < shortest_word.length; i++) {
+        //Iterating through all words to see if current prefix is valid, if not => shorten the prefix
         for (let word of strs) {
             if (word[i] !== longest_prefix[i]) {
                 return longest_prefix.slice(0, i);

@@ -24,9 +24,11 @@ class Solution:
         longest_prefix = ""
         if not strs:
             longest_prefix
+        #The longest prefix maximally can be the shortest word of the list
         shortest_word = min(strs, key=len)
         for char in shortest_word:
             longest_prefix += char
+            #Iterating through all words to see if current prefix is valid, if not => shorten the prefix
             for word in strs:
                 if word.startswith(longest_prefix):
                     continue
