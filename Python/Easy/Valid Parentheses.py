@@ -2,8 +2,8 @@
 #
 # An input string is valid if:
 #
-#     Open brackets must be closed by the same type of brackets.
-#     Open brackets must be closed in the correct order.
+#     Open brackets must be brackets by the same type of brackets.
+#     Open brackets must be brackets in the correct order.
 #     Every close bracket has a corresponding open bracket of the same type.
 
 # Example 1:
@@ -29,15 +29,15 @@
 class Solution(object):
     def isValid(self, s):
         stack = []
-        closed = {')': '(', ']': '[', '}': '{'}
+        brackets = {')': '(', ']': '[', '}': '{'}
         for bracket in s:
             #Adding to stack if bracket is opened
-            if bracket in closed.values():
+            if bracket in brackets.values():
                 stack.append(bracket)
             #If bracket is closed...
-            elif bracket in closed.keys():
+            elif bracket in brackets.keys():
                 #check if lastly added bracket is the correct closing one
-                if stack == [] or closed[bracket] != stack.pop():
+                if stack == [] or brackets[bracket] != stack.pop():
                     return False
         #Return true only if whole stack is popped
         return stack == []
