@@ -8,7 +8,7 @@
 # - Return k.
 #
 # Custom Judge:
-
+#
 # The judge will test your solution with the following code:
 #
 # int[] nums = [...]; // Input array
@@ -23,7 +23,7 @@
 #
 # If all assertions pass, then your solution will be accepted.
 #
-
+#
 # Example 1:
 #
 # Input: nums = [1, 1, 2]
